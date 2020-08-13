@@ -1,0 +1,8 @@
+# Created by .ignore support plugin (hsz.mobi)
+# file
+.iml
+# dictionary
+.idea/
+target/
+allure-results/
+logs/

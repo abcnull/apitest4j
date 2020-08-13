@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="API Test Suite" parallel="tests" thread-count="1">
+    <!-- 配置文件路径 -->
+    <parameter name="propertiesPath" value="src/test/resources/config/config.properties"/>
+
+    <!-- jenkins 传参示例，可做成数据驱动 -->
+    <parameter name="param1" value="${param1}"/>
+    <parameter name="param2" value="${param2}"/>
+
+    <!-- 测试套件 -->
+    <suite-files>
+        <!-- Li Ming -->
+        <suite-file path="liming_testng.xml"/>
+        <!-- Zhang Hua -->
+        <suite-file path="zhanghua_testng.xml"/>
+    </suite-files>
+
+    <!-- 监听器 -->
+    <listeners>
+
+    </listeners>
+</suite>
