@@ -1,6 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 # file
-.iml
+*.iml
 # dictionary
 .idea/
 target/

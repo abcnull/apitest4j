@@ -21,6 +21,7 @@
         <junit5.version>5.7.0-M1</junit5.version>
         <slf4j.version>1.7.25</slf4j.version>
         <log4j.version>2.11.1</log4j.version>
+        <restassured.version>4.2.0</restassured.version>
         <testng.version>6.14.3</testng.version>
         <httpclient.version>4.5.9</httpclient.version>
         <gson.version>2.8.5</gson.version>
@@ -70,6 +71,17 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j-impl</artifactId>
             <version>${log4j.version}</version>
+        </dependency>
+        <!-- rest-assured -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${restassured.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-path</artifactId>
+            <version>${restassured.version}</version>
         </dependency>
         <!-- testng -->
         <dependency>

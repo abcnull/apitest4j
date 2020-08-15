@@ -18,6 +18,9 @@
 
     <!-- 监听器 -->
     <listeners>
-
+        <!-- 测试日志监听器 -->
+        <listener class-name="com.abcnull.listener.TestLogListener"/>
+        <!-- 优先级监听器 -->
+        <listener class-name="com.abcnull.listener.RePrioritizingListener"/>
     </listeners>
 </suite>

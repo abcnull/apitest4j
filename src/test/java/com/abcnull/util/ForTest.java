@@ -1,7 +1,4 @@
-package util;
-
-import org.junit.jupiter.api.DynamicTest;
-import org.junit.jupiter.api.Test;
+package com.abcnull.util;
 
 /**
  * @author abcnull@qq.com
