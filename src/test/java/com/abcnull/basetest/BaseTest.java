@@ -49,7 +49,7 @@ public class BaseTest {
      */
     @BeforeTest(alwaysRun = true)
     @Parameters({"corpid", "corpsecret"})
-    public void beforeTest(@Optional("wwd2f79f6df4aa2617") String corpid, @Optional("FeRPGfjboDtbjh9XpIZnHm8OZdKBNT9DO_eDz0O4CCw") String corpsecret) {
+    public void beforeTest(@Optional() String corpid, @Optional() String corpsecret) {
         /* 产生登录身份信息 */
         baseToken = new BaseToken();
         token = baseToken.login(corpid, corpsecret);

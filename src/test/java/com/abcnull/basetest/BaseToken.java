@@ -1,6 +1,7 @@
 package com.abcnull.basetest;
 
 import com.abcnull.util.PropertiesReader;
+import lombok.extern.slf4j.Slf4j;
 
 import static io.restassured.RestAssured.given;
 
@@ -11,6 +12,7 @@ import static io.restassured.RestAssured.given;
  * @version 1.0.0
  * @date 2020/8/15 18:32
  */
+@Slf4j
 public class BaseToken {
     /**
      * 登录后身份信息
@@ -30,6 +32,8 @@ public class BaseToken {
         }
         // 若参数为 null 则返回 token 为 null
         if (str[0] == null || str[1] == null) {
+            log.warn("token 信息为空！请检查你的 corpid 和 corpsecret 是否填写！");
+            log.info("若直接运行测试类，请在 BaseTest 的 @Optional 中填写自己的默认 corpid 和 corpsecret 信息，若运行 xml 文件则需要在 testng.xml 填写自己的 corpid 和 corpsecret 以便产生属于自己的 token，鉴于安全考虑库主不会将自己的 token 信息放置于此框架中");
             return null;
         }
         // 接口请求返回 token
