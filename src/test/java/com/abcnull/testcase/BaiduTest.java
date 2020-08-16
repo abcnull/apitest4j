@@ -2,6 +2,7 @@ package com.abcnull.testcase;
 
 import com.abcnull.basetest.BaseTest;
 import com.abcnull.pageobject.module.BaiduModule;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /**
@@ -12,14 +13,14 @@ import org.testng.annotations.Test;
 public class BaiduTest extends BaseTest {
     private BaiduModule baiduModule;
 
-    @Test
+    @Test(description = "百度搜索", priority = 1)
     public void testSearch() {
-        baiduModule = new BaiduModule(token);
-        baiduModule.search();
+        baiduModule = new BaiduModule();
+        Assert.assertTrue(baiduModule.search().getBody().asString().contains("百度搜索"));
     }
 
-    @Test
+    @Test(description = "其他操作", priority = 2)
     public void testOther() {
-        // todo : 测试其他接口
+        // todo : 测试百度其他接口
     }
 }

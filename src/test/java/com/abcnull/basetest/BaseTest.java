@@ -7,6 +7,8 @@ import org.testng.annotations.*;
 import java.io.IOException;
 
 /**
+ * 测试基础类
+ *
  * @author abcnull@qq.com
  * @version 1.0.0
  * @date 2020/8/15 11:20
@@ -42,28 +44,37 @@ public class BaseTest {
     /**
      * 在每个 <test> 之前执行
      *
-     * @param corpid 对于企业微信来说，为企业的 id，类似于 username
+     * @param corpid     对于企业微信来说，为企业的 id，类似于 username
      * @param corpsecret 对于企业微信来说，为企业的密码，类似于 password
      */
     @BeforeTest(alwaysRun = true)
     @Parameters({"corpid", "corpsecret"})
-    public void beforeTest(@Optional() String corpid, @Optional() String corpsecret) {
+    public void beforeTest(@Optional("wwd2f79f6df4aa2617") String corpid, @Optional("FeRPGfjboDtbjh9XpIZnHm8OZdKBNT9DO_eDz0O4CCw") String corpsecret) {
         /* 产生登录身份信息 */
         baseToken = new BaseToken();
         token = baseToken.login(corpid, corpsecret);
         // todo : 由于线程隔离设为 test，这里可以通过 new 一个对象来达到线程隔离的效果，可以做其他的扩展定制（看需要）
     }
 
+    /**
+     * BeforeClass
+     */
     @BeforeClass(alwaysRun = true)
     public void beforeClass() {
         // todo : 自己可以做一些其他的初始化操作
     }
 
+    /**
+     * AfterClass
+     */
     @AfterClass(alwaysRun = true)
     public void afterClass() {
         // todo : 资源释放
     }
 
+    /**
+     * AfterTest
+     */
     @AfterTest(alwaysRun = true)
     public void afterTest() {
         baseToken.releaseToken();
@@ -71,6 +82,9 @@ public class BaseTest {
         // todo : 其他资源释放
     }
 
+    /**
+     * AfterSuite
+     */
     @AfterSuite(alwaysRun = true)
     public void afterSuite() {
         // todo : 资源释放

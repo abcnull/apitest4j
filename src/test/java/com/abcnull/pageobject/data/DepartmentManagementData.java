@@ -11,17 +11,30 @@ import java.util.Map;
  * @date 2020/8/15 19:30
  */
 public class DepartmentManagementData {
-    public final static Map<String, String> createDepartmentRequest = new HashMap<>();
+    /**
+     * 创建部门接口
+     */
+    public final static Map<String, String> createDepartmentRequest = new HashMap<String, String>() {
+        {
+            put("api", "/cgi-bin/department/create");
+            put("body",
+                    "    {\n" +
+                            "       \"name\": \"广州研发中心\",\n" +
+                            "       \"name_en\": \"RDGZ\",\n" +
+                            "       \"parentid\": 1,\n" +
+                            "       \"order\": 1,\n" +
+                            "       \"id\": 2\n" +
+                            "    }");
+        }
+    };
 
-    public static void initMap() {
-        createDepartmentRequest.put("api", "/department/create");
-        createDepartmentRequest.put("body",
-                "    {\n" +
-                        "       \"name\": \"广州研发中心\",\n" +
-                        "       \"name_en\": \"RDGZ\",\n" +
-                        "       \"parentid\": 1,\n" +
-                        "       \"order\": 1,\n" +
-                        "       \"id\": 2\n" +
-                        "    }");
-    }
+    /**
+     * 删除部门接口
+     */
+    public final static Map<String, String> deleteDepartmentRequest = new HashMap<String, String>() {
+        {
+            put("api", "/cgi-bin/department/delete");
+            put("body", "id=2");
+        }
+    };
 }

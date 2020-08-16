@@ -8,6 +8,11 @@
     <parameter name="param1" value="${param1}"/>
     <parameter name="param2" value="${param2}"/>
 
+    <!-- 用于产生 token 的用户和密码 -->
+    <!-- 我这里放置的是虚假信息，请用户自行注册免费的企业微信，在企业微信中找到 corpid 和通讯录的 corpsecret 并写在下面 -->
+    <parameter name="corpid" value="wwd2f79f6df4aa2617"/>
+    <parameter name="corpsecret" value="FeRPGfjboDtbjh9XpIZnHm8OZdKBNT9DO_eDz0O4CCw"/>
+
     <!-- 测试套件 -->
     <suite-files>
         <!-- Li Ming -->
