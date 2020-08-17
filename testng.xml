@@ -10,8 +10,8 @@
 
     <!-- 用于产生 token 的用户和密码 -->
     <!-- 我这里放置的是虚假信息，请用户自行注册免费的企业微信，在企业微信中找到 corpid 和通讯录的 corpsecret 并写在下面 -->
-    <parameter name="corpid" value="xxx"/>
-    <parameter name="corpsecret" value="xxx"/>
+    <parameter name="corpid" value=""/>
+    <parameter name="corpsecret" value=""/>
 
     <!-- 测试套件 -->
     <suite-files>

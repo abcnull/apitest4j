@@ -51,6 +51,7 @@ public class BaseTest {
     @Parameters({"corpid", "corpsecret"})
     public void beforeTest(@Optional() String corpid, @Optional() String corpsecret) {
         /* 产生登录身份信息 */
+        System.out.println();
         baseToken = new BaseToken();
         token = baseToken.login(corpid, corpsecret);
         // todo : 由于线程隔离设为 test，这里可以通过 new 一个对象来达到线程隔离的效果，可以做其他的扩展定制（看需要）

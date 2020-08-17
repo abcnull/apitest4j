@@ -32,7 +32,7 @@ public class BaseToken {
             throw new AuthException("参数不全");
         }
         // 若参数为 null 则返回 token 为 null
-        if (str[0] == null || str[1] == null) {
+        if (str[0] == null || str[1] == null || str[0].equals("") || str[1].equals("")) {
             log.warn("token 信息为空！请检查你的 corpid 和 corpsecret 是否填写！");
             log.info("若直接运行测试类，请在 BaseTest 的 @Optional 中填写自己的默认 corpid 和 corpsecret 信息，若运行 xml 文件则需要在 testng.xml 填写自己的 corpid 和 corpsecret 以便产生属于自己的 token，鉴于安全考虑库主不会将自己的 token 信息放置于此框架中");
             return null;
