@@ -1,5 +1,6 @@
 package com.abcnull.basetest;
 
+import com.abcnull.exception.AuthException;
 import com.abcnull.util.PropertiesReader;
 import lombok.extern.slf4j.Slf4j;
 
@@ -28,7 +29,7 @@ public class BaseToken {
     public String login(CharSequence... str) {
         // 若参数小于两个
         if (str.length < 2) {
-            throw new RuntimeException("产生 token 的接口中传参不全！");
+            throw new AuthException("参数不全");
         }
         // 若参数为 null 则返回 token 为 null
         if (str[0] == null || str[1] == null) {
